@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8"/>
+<title>Login form</title>
+<script src="md5.js"></script>
+<script src="SHA.js"></script>
+<script>
+function encrypt(){
+document.getElementById("output").innerHTML="Username:-"+document.getElementById("Username").value+"<br/>MD5:"+MD5(document.getElementById("Username").value)+"<br/>SHA:"+SHA(document.getElementById("Username").value)+"<br/>Password:-"+document.getElementById("password").value+"<br/>MD5:"+MD5(document.getElementById("password").value)+document.getElementById("password").value+"<br/>SHA:"+SHA(document.getElementById("password").value);
+}
+</script>
+</head>
+<body>
+<style>
+body{
+padding:200px;
+padding-left:550px;
+padding-right:550px;
+background-image:url('skyscrapper.jpg');
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #e7e7e7;
+   
+}
+.login {
+  width: 350px;
+  position: absolute;
+  top: 55%;
+  left: 45%;
+  margin: -184px 0px 0px -155px;
+  background: rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07);
+}
+
+h1{
+ color:white;
+}
+input{
+ width:350px;
+ height:30px;
+}
+input[type="button"]{
+   background: #3399ff;
+  border: 0;
+  align:center;
+  width: 350px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.4s linear;
+}
+</style>
+<div class="login">
+<h1 align="center">Login form</h1>
+<input type="Username" name="Username" id="Username" placeholder="Username" required><br><br>
+<input type="password" name="password" id="password" placeholder="Password" required><br><br>
+<input type="button" name="submit" id="submit" value="Encrypt" onclick="encrypt()">
+<p id="output">
+</p>
+</div>
+</body>
+</html>
